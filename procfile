@@ -1,1 +1,1 @@
-web: gunicorn Customer_Churn.wsgi --log-file
+web: gunicorn Customer_Churn.Customer_Churn.wsgi --log-file
