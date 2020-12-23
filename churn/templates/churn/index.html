@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Customer Churn</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+
+		<!-- LINEARICONS -->
+		<link rel="stylesheet" href="{% static 'churn/fonts/linearicons/style.css' %}">
+
+		<!-- MATERIAL DESIGN ICONIC FONT -->
+		<link rel="stylesheet" href="{% static 'churn/fonts/material-design-iconic-font/css/material-design-iconic-font.css' %}">
+
+		<!-- STYLE CSS -->
+		<link rel="stylesheet" href="{% static 'churn/css/style.css' %}">
+
+		<link rel="shortcut icon" href="{% static 'churn/favicon.ico' %}" type="image/x-icon">  
+		
+	</head>
+	<body>
+		<div class="wrapper">
+			<div class="image-holder">
+				<img src="{% static 'churn/images/churn.jpg' %}" alt="">
+			</div>
+            <div class="form-content">
+				<h3>Customer Churn Prediction</h3>
+            	<form action="/result" method="post">
+            		<div id="wizard">
+	            		<!-- SECTION 1 -->
+		                <h4></h4>
+		                <section>
+							<h3>Basic Information</h3>
+							
+							<div class="info ">
+								<div class="info-item">
+									<span class="lnr lnr-map-marker"></span>
+									<span class="unit">Zip Code :</span>
+								    <input type="text" name="Zip Code" id="Zip Code" class="form-control" required>
+								</div>
+								<div class="info-item ">
+									<span class="lnr lnr-user"></span>
+									<span class="unit" >Gender :</span>
+								   <input type="radio" name="gender" value="male"  required>   Male
+								   <input type="radio" name="gender" value="female"> Female
+								</div>
+								<div class="info-item ">
+									<span class="lnr lnr-mustache"></span>
+									<span class="unit">Senior Citizen :</span>
+								    <input type="radio" name="Senior Citizen" value="yes" required>   Yes
+								   <input type="radio" name="Senior Citizen" value="no"> No
+								</div>
+								<div class="info-item ">
+									<span class="lnr lnr-users"></span>
+									<span class="unit">Partner :</span>
+								    <input type="radio" name="Partner" value="yes" required>   Yes
+								   <input type="radio" name="Partner" value="no"> No
+								</div>
+							
+								<div class="info-item ">
+									<span class="lnr lnr-lock"></span>
+									<span class="unit">Dependents: </span>
+									<input type="radio" name="Dependents" value="yes"required>   Yes
+									<input type="radio" name="Dependents" value="no"> No
+								</div>
+							</div>
+		                </section>
+
+						<!-- SECTION 2 -->
+		                <h4></h4>
+		                <section>
+							<h3>Phone Line Information</h3>
+							<div class="row">
+								<div class="column">
+							<div class="info-item ">
+								<span class="lnr lnr-phone"></span>
+								<span class="unit">Phone Service:</span>
+								
+								<input type="radio" name="Phone Service" value="yes" required>   Yes
+								<input type="radio" name="Phone Service" value="no" > No
+							</div>
+							<div class="info-item ">
+								<span class="lnr lnr-smartphone"></span>
+								<span class="unit">Multiple Lines:</span>
+								
+								<input type="radio" name="Multiple Lines" value="yes" required>   Yes
+								<input type="radio" name="Multiple Lines" value="no" > No
+							</div>
+							<div class="info-item ">
+								<span class="lnr lnr-earth"></span>
+								<span class="unit">Internet Service:</span>
+								
+								<input type="radio" name="Internet Service" value="DSL" required>   DSL
+								<input type="radio" name="Internet Service" value="Fiber optic" required>  Fiber optic
+								<input type="radio" name="Internet Service" value="no" > No
+							</div>
+							<div class="info-item ">
+								<span class="lnr lnr-lock"></span>
+								<span class="unit">Online Security:</span>
+								
+								<input type="radio" name="Online Security" value="yes" required>   Yes
+								<input type="radio" name="Online Security" value="no" > No
+							</div>
+							<div class="info-item ">
+								<span class="lnr lnr-cloud"></span>
+								<span class="unit">Online Backup:</span>
+								
+								<input type="radio" name="Online Backup" value="yes" required>   Yes
+								<input type="radio" name="Online Backup" value="no" > No
+							</div>
+						</div>
+					<div class="column">
+							<div class="info-item ">
+								<span class="lnr lnr-link"></span>
+								<span class="unit">Device Protection:</span>
+								
+								<input type="radio" name="Device Protection" value="yes" required>   Yes
+								<input type="radio" name="Device Protection" value="no" > No
+							</div>
+							<div class="info-item ">
+								<span class="lnr lnr-code"></span>
+								<span class="unit">Tech Support:</span>
+								
+								<input type="radio" name="Tech Support" value="yes" required>   Yes
+								<input type="radio" name="Tech Support" value="no" > No
+							</div>
+							<div class="info-item ">
+								
+								<span class="lnr lnr-screen"></span>
+								<span class="unit">Streaming TV:</span>
+								<input type="radio" name="Streaming TV" value="yes" required>   Yes
+								<input type="radio" name="Streaming TV" value="no" > No
+							</div>
+							<div class="info-item ">
+								<span class="lnr lnr-camera-video"></span>
+								<span class="unit">Streaming Movies:</span>
+								
+								<input type="radio" name="Streaming Movies" value="yes" required>   Yes
+								<input type="radio" name="Streaming Movies" value="no" > No
+							</div>
+							</div>
+						</div>
+		                </section>
+
+		                <!-- SECTION 3 -->
+		                <h4></h4>
+		                <section>
+		                	<h3 style="margin-bottom: 50px;">Payment Information</h3>
+		                	<div class="info-item">
+								
+								<span class="lnr lnr-license"></span>
+								<span class="unit">Contract:</span>
+								<input type="radio" name="Contract" value="Month-to-month" required> Month-to-month
+								<input type="radio" name="Contract" value="Two year Contract" > Two year Contract
+								<input type="radio" name="Contract" value="One year" > One year Contract
+							</div>
+							<div class="info-item">
+								<span class="lnr lnr-cloud-check"></span>
+								<span class="unit">Paperless Billing:</span>
+								
+								<input type="radio" name="Paperless Billing" value="yes" required>   Yes
+								<input type="radio" name="Paperless Billing" value="no" > No
+							</div>
+							<div class="info-item">
+								<span class="lnr lnr-cart"></span>
+								<span class="unit">Payment Method:</span>
+								
+								<input type="radio" name="Payment Method" value="Mailed Check" required> Mailed Check
+								<input type="radio" name="Payment Method" value="Electronic Check" > Electronic Check
+								<input type="radio" name="Payment Method" value="Bank Transfer(automatic)" > Bank Transfer(automatic)
+								<input type="radio" name="Payment Method" value="Credit card(automatic)" > Credit card(automatic)
+							</div>
+							<div class="info-item">
+								<span class="lnr lnr-hourglass"></span>
+								<span class="unit">Monthly Tenure :</span>
+								<input type="text" class="form-control"  name="Tenure Month" required>
+							</div>
+							<div class="info-item">
+								<span class="lnr lnr-tag"></span>
+								<span class="unit">Monthly Charges :</span>
+								<input type="text" class="form-control" name="Monthly Charges" required>
+							</div>
+							<div class="info-item">
+								<span class="lnr lnr-layers"></span>
+								<span class="unit">Total Charges :</span>
+								<input type="text" class="form-control" required>
+							</div>
+							
+		                	
+		                </section>
+					</div>
+					<input type="submit" id="submit" hidden>
+            	</form>
+            	
+				<!-- SOCIAL -->
+                <!-- <div class="social">
+					<a href="#">
+						<i class="zmdi zmdi-facebook"></i>
+					</a>
+					<a href="#">
+						<i class="zmdi zmdi-twitter"></i>
+					</a>
+					<a href="#">
+						<i class="zmdi zmdi-tumblr"></i>
+					</a>
+					<a href="#">
+						<i class="zmdi zmdi-instagram"></i>
+					</a>
+				</div> -->
+            </div>
+		</div>
+
+		<script src="{% static 'churn/js/jquery-3.3.1.min.js' %}"></script>
+		
+		<!-- JQUERY STEP -->
+		<script src= "{% static 'churn/js/jquery.steps.js' %}"></script>
+
+		<script src="{% static 'churn/js/main.js' %}"></script>
+<!-- Template created and distributed by Colorlib -->
+</body>
+</html>
