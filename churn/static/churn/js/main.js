@@ -1,4 +1,5 @@
 $(function(){
+  
 	$("#wizard").steps({
         headerTag: "h4",
         bodyTag: "section",
@@ -48,11 +49,12 @@ $('.count').each(function () {
     $(this).prop('counter', 0).animate({
         counter: $(this).text()
     }, {
-        duration: 10000,
+        duration: 4000,
         easing: 'easeOutExpo',
         step: function (step) {
             
             $(this).text('' + step.format(2));
         }
     });
+    
 });

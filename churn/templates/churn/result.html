@@ -27,23 +27,18 @@
             <div class="form-content">
 				<h3>Customer Churn Prediction</h3>
 				
-            	<h3>You Customer has a <span class="count">{{ prediction|floatformat:-2 }} </span>% chance of churning !</h3>
-            	<div  style="text-align: center;"><ul class="actions" > <li> <a href="/"> Home </a></li> </ul></div>
-				<!-- SOCIAL -->
-                <!-- <div class="social">
-					<a href="#">
-						<i class="zmdi zmdi-facebook"></i>
-					</a>
-					<a href="#">
-						<i class="zmdi zmdi-twitter"></i>
-					</a>
-					<a href="#">
-						<i class="zmdi zmdi-tumblr"></i>
-					</a>
-					<a href="#">
-						<i class="zmdi zmdi-instagram"></i>
-					</a>
-				</div> -->
+				<h3>You Customer has a <span class="count">{{ prediction|floatformat:-2 }} </span>% chance of churning !</h3>
+				{% if prediction > 50 %}
+				<div style="text-align: center;" class="fade-in-start" id="emoji"><img  style="width: 100px; " src="{% static 'churn/images/sad.png' %}"></div>
+				{% else  %}
+				<div style="text-align: center;" class="fade-in-start" id="emoji"><img  style="width: 100px; " src="{% static 'churn/images/happy.png' %}"></div>
+				{% endif %}
+
+
+
+				 
+				<div  style="text-align: right;" class="actions"><ul  > <li> <a href="/"> Home </a> </li> <li> <a href="https://github.com/Anis-Bouaziz/Customer_Churn" target="_blank">  <span class="zmdi zmdi-github"> Project Repo</span>   </a></li> </ul></div>
+				
             </div>
 		</div>
 
@@ -54,6 +49,11 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
 
 		<script src="{% static 'churn/js/main.js' %}"></script>
+		<script>
+			setTimeout(()=>{
+				$('#emoji').addClass('fade-in-end')
+			},4500)
+		</script>
 <!-- Template created and distributed by Colorlib -->
 
 </body>
