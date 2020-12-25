@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'oe*n4o9_f!7n%04(&h-0_lsoy%bsex80m(_ps0qanswmzdu2e4'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['predicting-customer-churn.herokuapp.com']
 
