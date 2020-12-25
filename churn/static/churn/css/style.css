@@ -41,7 +41,7 @@ img {
   vertical-align: middle; }
 
 .wrapper {
-  height: 100vh;
+  min-height: 100vh;
   display: flex; }
   .wrapper .image-holder {
     width: 65.78%; }
@@ -49,13 +49,12 @@ img {
     width: 90%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    padding-top: 4.3%;
     padding-left: 4.3%;
     padding-right: 4.3%;
     position: relative; }
 
-.wizard {
-  height: 509px; }
+
 
 .steps .current-info, .steps .number {
   display: none; }
@@ -179,6 +178,7 @@ select.form-control {
   color: #999; }
 
 .actions ul {
+  padding-bottom: 100px;
   display: flex;
   justify-content: space-between; }
 .actions li a {
@@ -330,3 +330,35 @@ select.form-control {
 .column {
   flex: 50%;
 }
+
+.fade-in-start {
+  opacity: 0;
+  transition: all 2s;
+  }
+  @keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+  }
+  
+  @-moz-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+  }
+  
+  @-webkit-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+  }
+  
+  @-o-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+  }
+  
+  @-ms-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+  }
+  .fade-in-end{
+    opacity: 1;
+  }
